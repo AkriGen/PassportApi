@@ -1,0 +1,9 @@
+/* you can add global styles to this file and also import other style files*/
+.green-icon{
+    background-color: rgb(159,247,135);
+    color: darkgreen;
+    }
+    .red-icon{
+        background-color: rgb(249,115,115);
+        color: darkred;
+    }

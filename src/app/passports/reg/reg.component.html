@@ -1,0 +1,49 @@
+
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="Id"[value]="srv.passportData.Id">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-fgroup-prepend">
+                <div class="input-group-text bg-white">  
+                  <i class="bi bi-person-bounding-box"  [class.green-icon]="HolderName.valid" [class.red-icon]="HolderName.invalid && HolderName.touched"></i> &nbsp;
+                   <input name="HolderName" #HolderName ="ngModel" [(ngModel)]="srv.passportData.HolderName"
+                   placeholder="passport holder name" class="form-control" required >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-fgroup-prepend">
+                <div class="input-group-text bg-white">  
+                  <i class="bi bi-person-bounding-box"  [class.green-icon]="PassportNumber.valid" [class.red-icon]="PassportNumber.invalid && PassportNumber.touched"></i>&nbsp;
+                   <input name="PassportNumber" #PassportNumber ="ngModel" [(ngModel)]="srv.passportData.PassportNumber"
+                   placeholder="passport number" class="form-control" required maxlength="10" minlength="10" >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-fgroup-prepend">
+                <div class="input-group-text bg-white">  
+                  <i class="bi bi-person-bounding-box"  [class.green-icon]="ExpiryDate.valid" [class.red-icon]="ExpiryDate.invalid && ExpiryDate.touched"></i> &nbsp;
+                   <input name="ExpiryDate" #ExpiryDate ="ngModel" [(ngModel)]="srv.passportData.ExpiryDate"
+                   placeholder="ExpiryDate" class="form-control" required maxlength="5" minlength="5" >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-fgroup-prepend">
+                <div class="input-group-text bg-white">  
+                  <i class="bi bi-person-bounding-box"  [class.green-icon]="ZipCode.valid" [class.red-icon]="ZipCode.invalid && ZipCode.touched"></i> &nbsp;
+                   <input name="ZipCode" #ZipCode ="ngModel" [(ngModel)]="srv.passportData.ZipCode"
+                   placeholder="PinCode[6 digits]" class="form-control" required maxlength="6" minlength="6" >
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-lg btn-outline-success m-2 p-2" type="submit"> <i class="bi bi-database-up"></i>Register/Update</button>
+</form>
